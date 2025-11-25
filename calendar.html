@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Event Booking Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="content-wrapper">
+    
+    <!-- LEFT: Booking Form -->
+    <div class="event-form-container glass">
+      <h3>Book Your Event</h3>
+      <form id="eventForm">
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" required />
+
+        <label for="eventDate">Select Date:</label>
+        <input type="date" id="eventDate" required />
+
+        <label for="eventDescription">Event Description:</label>
+        <textarea id="eventDescription" rows="3" required></textarea>
+
+        <button type="submit" class="btn">Book Now</button>
+      </form>
+    </div>
+
+    <!-- RIGHT: Calendar -->
+    <div class="calendar-container glass">
+      <div class="calendar-header">
+        <button id="prev-btn">&#10094;</button>
+        <span id="month-display"></span>
+        <select id="year-select"></select>
+        <button id="next-btn">&#10095;</button>
+      </div>
+
+      <div class="weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+      </div>
+
+      <div id="calendar-days" class="calendar-days"></div>
+    </div>
+  </section>
+
+  <!-- Popup -->
+  <div id="eventDetailsPopup" class="event-popup" style="display:none;">
+    <div class="popup-content">
+      <h3 id="popupDateTitle"></h3>
+      <ul id="eventList"></ul>
+      <button onclick="document.getElementById('eventDetailsPopup').style.display='none'">Close</button>
+    </div>
+  </div>
+
+  <script src="booking.js"></script>
+</body>
+</html>
